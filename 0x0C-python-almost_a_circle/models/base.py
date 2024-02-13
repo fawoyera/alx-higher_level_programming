@@ -57,7 +57,8 @@ class Base:
         filename = cls.__name__ + ".json"
         try:
             with open(filename, "r") as fp:
-                return [cls.create(**dict) for dict in (cls.from_json_string(fp.read()))]
+                return [cls.create(**dict) for dict in
+                        (cls.from_json_string(fp.read()))]
         except FileNotFoundError:
             return []
 
@@ -86,7 +87,9 @@ class Base:
             fieldnames = ['id', 'size', 'x', 'y']
         try:
             with open(filename, "r", newline='') as fp:
-                return [cls.create(**dicti) for dicti in [{k: int(v) for k, v in dict.items()} for dict in csv.DictReader(fp, fieldnames=fieldnames)]]
+                return [cls.create(**dicti) for dicti in [{k: int(v)
+                        for k, v in dict.items()} for dict
+                        in csv.DictReader(fp, fieldnames=fieldnames)]]
         except FileNotFoundError:
             return []
 

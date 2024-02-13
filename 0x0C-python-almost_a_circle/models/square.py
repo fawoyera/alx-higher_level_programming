@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Module to define a class Square"""
-from models.rectangle import Rectangle
+from models.rectangle import Rectangle, Base
 
 
 class Square(Rectangle):
@@ -11,8 +11,8 @@ class Square(Rectangle):
 
     def __str__(self):
         """Custom __str__ method"""
-        return "[Square] ({}) {}/{} - {}".format(self.id, 
-self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(self.id,
+                                                 self.x, self.y, self.width)
 
     @property
     def size(self):

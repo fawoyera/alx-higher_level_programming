@@ -91,13 +91,15 @@ class Rectangle(Base):
 
     def display(self):
         """method to display rectangle using #"""
-        print('\n' * self.__y + ((' ' * self.__x + '#' * 
-                self.__width + '\n') * self.__height), end="")
+        print('\n' * self.__y + ((' ' * self.__x + '#' *
+                                  self.__width + '\n') *
+                                 self.__height), end="")
 
     def __str__(self):
         """custom __str__ method"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x, 
-self.__y, self.__width, self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
+                                                       self.__y, self.__width,
+                                                       self.__height)
 
     def update(self, *args, **kwargs):
         """public method to update attributes"""
@@ -112,4 +114,5 @@ self.__y, self.__width, self.__height)
 
     def to_dictionary(self):
         """public method to return dictionary representation of rectangle"""
-        return {key: getattr(self, key) for key in ['id', 'width', 'height', 'x', 'y']}
+        return {key: getattr(self, key) for key
+                in ['id', 'width', 'height', 'x', 'y']}
