@@ -15,8 +15,8 @@ if __name__ == "__main__":
                                  passwd=password, db=database, charset="utf8")
     cursor = connection.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE states.name\
-                   LIKE 'N%' ORDER BY states.id")
+    cursor.execute("""SELECT * FROM states WHERE states.name
+                   LIKE 'N%' ORDER BY states.id""")
     query_results = cursor.fetchall()
 
     for row in query_results:
