@@ -34,6 +34,8 @@ if __name__ == "__main__":
                 print(", ", end="")
             else:
                 print()
+        if length < 1:
+            print()
 
     cursor.close()
     connection.close()
