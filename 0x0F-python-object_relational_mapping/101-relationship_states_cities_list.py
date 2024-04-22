@@ -18,15 +18,22 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query_results = session.query(State, City).filter(State.id == City.state_id
+    """query_results = session.query(State, City).filter(
+                                            State.id == City.state_id
                                                       ).order_by(State.id,
-                                                                 City.id).all()
+                                                    City.id).all()"""
 
-    previous_state = "dummy"
+    """previous_state = "dummy"
     for state, city in query_results:
         if state.name != previous_state:
             print("{}: {}".format(state.id, state.name))
             previous_state = state.name
-        print("\t{}: {}".format(city.id, city.name))
+        print("\t{}: {}".format(city.id, city.name))"""
+
+    query_results = session.query(State).order_by(State.id).all()
+    for state in query_results:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("\t{}: {}".format(city.id, city.name))
 
     session.close()
