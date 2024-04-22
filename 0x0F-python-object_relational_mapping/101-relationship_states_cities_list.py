@@ -27,6 +27,6 @@ if __name__ == "__main__":
         if state.name != previous_state:
             print("{}: {}".format(state.id, state.name))
             previous_state = state.name
-        print("    {}: {}".format(city.id, city.name))
+        print("\t{}: {}".format(city.id, city.name))
 
     session.close()
