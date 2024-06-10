@@ -3,7 +3,7 @@
 
 const id = 18;
 const wedgeAntillesURL = `https://swapi-api.alx-tools.com/api/people/${id}/`;
-const URL = `${process.argv[2]}/`;
+const URL = `${process.argv[2]}`;
 
 const request = require('request');
 
