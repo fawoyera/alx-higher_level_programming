@@ -2,7 +2,7 @@
 /* Script to print the number of movies where the character "Wedge Antilles" is present */
 
 const id = 18;
-const wedgeAntillesURL = `https://swapi.co/api/people/${id}/`;
+const wedgeAntillesURL = `https://swapi-api.alx-tools.com/api/people/${id}/`;
 const URL = `${process.argv[2]}`;
 
 const request = require('request');
