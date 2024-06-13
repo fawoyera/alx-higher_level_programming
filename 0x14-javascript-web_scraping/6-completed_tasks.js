@@ -28,6 +28,22 @@ request(URL, function (error, response, body) {
         }
       }
     }
-    console.log(obj);
+    let count = 1;
+    process.stdout.write('{');
+    for (const user in obj) {
+      if (obj[user] > 0) {
+        if (count === 1) {
+          process.stdout.write(` '${user}': ${obj[user]}`);
+          count++;
+        } else {
+          process.stdout.write(`,\n  '${user}': ${obj[user]}`);
+          count++;
+        }
+      }
+    }
+    if (count > 1) {
+      process.stdout.write(' ');
+    }
+    console.log('}');
   }
 });
